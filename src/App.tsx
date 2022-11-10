@@ -31,7 +31,6 @@ function App() {
 				/>
 				<div className="flex">
 					<div>
-						<Latex>$\lor ($</Latex>
 					</div>
 					<input
 						className="rounded-md px-2 w-56"
