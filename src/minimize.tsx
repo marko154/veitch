@@ -1,3 +1,5 @@
+import { Format } from "./App";
+
 type MDNO = [term: number, bitmap: number][];
 
 function minimize(minterms: number[], n: number) {
@@ -44,7 +46,7 @@ function removeRedundant_loops(mdno: MDNO, minterms: number[]) {
 
   for (const minterm of minterms) {
     let count = 0;
-    let T : [number, number]= [-1, -1];
+    let T = [-1, -1] as [number, number];
 
     for (const M of mdno) {
       const [term, bitmask] = M;
@@ -163,7 +165,8 @@ function recurse(terms: [number, number, Set<number>][], total: number) {
   return ans;
 }
 
-function latexFormat(mdno: MDNO, n: number) {
+function latexFormat(mdno: MDNO, n: number, format: Format) {
+  // handle different formats
   const disjunctions = [];
   for (const [term, bitmap] of mdno) {
     const conjunctions = [];
